@@ -1,7 +1,7 @@
 jQuery DFP - A jQuery implementation for Google DFP
 ======================================================
 
-[![Build Status](https://travis-ci.org/coop182/jquery.dfp.js.png?branch=master)](https://travis-ci.org/coop182/jquery.dfp.js)
+[![Build Status](https://travis-ci.org/darrellhanley/jquery.dfp.js.svg)](https://travis-ci.org/darrellhanley/jquery.dfp.js)
 
 This script is a drop in solution for getting Double Click for Publishers (DFP) by Google working on your page. By including this script on your page and then initialising it in the ways described below you should find it very easy to get DFP working.
 
@@ -12,7 +12,7 @@ This script also works with [Zepto.js](http://zeptojs.com/)
 Demo / Ad unit tester
 ---------------------
 
-You can use [this page](http://coop182.github.io/jquery.dfp.js/dfptests/test.html?google_console=1&networkID=15572793&adunitID=Leader&dimensions=728x90) to test your DFP ads using the jquery.dfp.js script. There is some debug code included to help debug the ad delivery.
+You can use [this page](http://darrellhanley.github.io/jquery.dfp.js/dfptests/test.html?google_console=1&networkID=15572793&adunitID=Leader&dimensions=728x90) to test your DFP ads using the jquery.dfp.js script. There is some debug code included to help debug the ad delivery.
 
 You can also use the [Google Console](https://support.google.com/dfp_sb/answer/181070?hl=en-GB) to debug your ad units. This is done by by adding a "google_console=1" or "google_debug=1" to the url, and toggling the console by pressing CTRL + F10. Subsequent pagerequests will not require the parameters, and the console can be toggled. Adding the querystring "googfc" to an url, will also load the console, but also show it, without having to press CTRL + F10.
 
@@ -97,7 +97,7 @@ Calling the script:
 </html>
 ```
 
-Using a bootstrap file (take a look at [example-bootstrap.js](https://github.com/coop182/jquery.dfp.js/blob/master/example-bootstrap.js)):
+Using a bootstrap file (take a look at [example-bootstrap.js](https://github.com/darrellhanley/jquery.dfp.js/blob/master/example-bootstrap.js)):
 
 ```html
 <html>
@@ -285,7 +285,7 @@ This script provides two callbacks which you can use to make working with DFP a 
     </tr>   
 </table>
 
-Please see the [example-bootstrap.js](https://github.com/coop182/jquery.dfp.js/blob/master/example-bootstrap.js) file for an example of how to use these.
+Please see the [example-bootstrap.js](https://github.com/darrellhanley/jquery.dfp.js/blob/master/example-bootstrap.js) file for an example of how to use these.
 
 Default URL Targeting
 ---------------------
@@ -315,7 +315,7 @@ The following targeting options are built into this script and should be setup i
 
 DFP now supports both a "begins with" and a "contains" operator when specifying the custom criteria value. Furthermore the value when using free-form-key-value custom criterias, is no longer subject to a 40 character limit. Read more about custom criteria in the [DFP help](https://support.google.com/dfp_premium/answer/188092).
 
-![URL Targeting](https://raw.github.com/coop182/jquery.dfp.js/master/img/url-targetting.png)
+![URL Targeting](https://raw.github.com/darrellhanley/jquery.dfp.js/master/img/url-targetting.png)
 
 **IMPORTANT: Regarding user-identifiable information in url targeting**
 
@@ -357,4 +357,4 @@ You should now be able to make your changes to `jquery.dfp.js` and once you are 
 
 Please feel free to write tests which will test your new code, [Travis CI](https://travis-ci.org/) is used to test the code automatically once a pull request is generated.
 
-Thanks a lot to these [contributors](https://github.com/coop182/jquery.dfp.js/graphs/contributors).
+Thanks a lot to these [contributors](https://github.com/darrellhanley/jquery.dfp.js/graphs/contributors).
