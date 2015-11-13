@@ -292,6 +292,30 @@
 
                 if (dfpOptions.disableInitialLoad) {
                     pubadsService.disableInitialLoad();
+                    // Allow for local enable and override with $adunit.data('lazyLoad')
+                    if(dfpOptions.lazyLoad && $adunit.data('lazyLoad') !== false || $adunit.data('lazyLoad')) {
+                        var range;
+                        if(typeof $adUnit.data('loadRange') == 'number'){
+                            range = Math.abs($adUnit.data('loadRange'));
+                        } else if (typeof dfpOptions.lazyRange == 'number'){
+                            range = Math.abs(dfpOptions.lazyRange);
+                        } else {
+                            range = 200;
+                        }
+                        $(window).on('scroll',function(){
+                            var baseAd = $adunit[0];
+                            var adBounds = baseAd.getBoundingClientRect();
+                            var visible = (
+                                bounds.top >= -1 * range &&
+                                bounds.left >= -1 * range &&
+                                bounds.bottom <= (window.innerHeight + range || document.documentElement.clientHeight + range) &&
+                                bounds.right <= (window.innerWidth + range || document.documentElement.clientWidth + range)
+                            );
+                            if($adUnit.data('outofpage') || visible){
+                                googletag.cmd.push(function () { googletag.pubads().refresh([$adUnitData]); });
+                            }
+                        });
+                    }
                 }
 
                 if (dfpOptions.noFetch) {
